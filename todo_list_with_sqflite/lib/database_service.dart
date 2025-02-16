@@ -35,7 +35,7 @@ class DatabaseService {
   Future<void> _onCreate(Database db, int version) async {
     await db.execute('''
       CREATE TABLE $_todosTableName (
-        $_todosIdColumnName INTEGER PRIMARY KEY, 
+        $_todosIdColumnName INTEGER PRIMARY KEY AUTOINCREMENT, 
         $_todosTodoColumnName TEXT NOT NULL, 
         $_todosStatusColumnName INTEGER NOT NULL
       )
