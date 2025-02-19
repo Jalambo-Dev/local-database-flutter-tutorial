@@ -33,9 +33,7 @@ class _TodosScreenState extends State<TodosScreen> {
       appBar: AppBar(
         title: Text(
           'SIMPLE TODO LIST',
-          style: TextStyle(
-            fontWeight: FontWeight.bold
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
