@@ -34,17 +34,19 @@ class TodoDb {
   /// Get all todos.
   List<Map<String, dynamic>> getAllTodos() {
     final List<Map<String, dynamic>> todos = [];
-    final todoKeys = _todoBox?.keys.toList() ?? [];
+    final List<dynamic> todoKeys = _todoBox?.keys.toList() ?? [];
 
-    for (var key in todoKeys) {
+    for (dynamic key in todoKeys) {
       final todo = _todoBox?.get(key);
       if (todo != null) {
+        /// Creates a copy of the todo map to avoid modifying the original.
         final Map<String, dynamic> todoWithId = Map<String, dynamic>.from(todo);
-        todoWithId[todoId] = key;
+        /// Adds the id of the to-do item to the copied map.
+        todoWithId[todoId] = key; // The `key` is the unique identifier for the to-do item in the Hive box.
+        /// Adds the modified map (now including the id) to the list of all to-do items.
         todos.add(todoWithId);
       }
     }
-
     return todos;
   }
 
