@@ -41,8 +41,10 @@ class TodoDb {
       if (todo != null) {
         /// Creates a copy of the todo map to avoid modifying the original.
         final Map<String, dynamic> todoWithId = Map<String, dynamic>.from(todo);
+
         /// Adds the id of the to-do item to the copied map.
-        todoWithId[todoId] = key; // The `key` is the unique identifier for the to-do item in the Hive box.
+        todoWithId[todoId] =
+            key; // The `key` is the unique identifier for the to-do item in the Hive box.
         /// Adds the modified map (now including the id) to the list of all to-do items.
         todos.add(todoWithId);
       }
@@ -96,7 +98,7 @@ class TodoDb {
   }
 
   /// Get a todo by key.
-  Map<String, dynamic>? getTodo(dynamic key) {
+  Map<dynamic, dynamic>? getTodo(dynamic key) {
     return _todoBox?.get(key);
   }
 

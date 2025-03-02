@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:todo_list_with_hive/ui/screens/todos_screen.dart';
+import 'package:todo_list_with_hive/screens/todos_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
